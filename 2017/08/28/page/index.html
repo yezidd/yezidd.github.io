@@ -7,7 +7,7 @@
     
 
     <title>
-      幽海的博客 
+      关于对js的原型链的初步探讨 | 幽海的博客 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -15,19 +15,19 @@
       <meta name="author" content="幽海">
     
     
-      <meta name="description" content="灯红酒绿的背后,是花与幽海">
-    
 
-    <meta name="description" content="灯红酒绿的背后,是花与幽海">
-<meta property="og:type" content="website">
-<meta property="og:title" content="幽海的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+    <meta name="description" content="javascript 中原型链的探讨">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于对js的原型链的初步探讨 | 幽海的博客">
+<meta property="og:url" content="http://yoursite.com/2017/08/28/page/index.html">
 <meta property="og:site_name" content="幽海的博客">
-<meta property="og:description" content="灯红酒绿的背后,是花与幽海">
+<meta property="og:description" content="javascript 中原型链的探讨">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-29T03:23:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="幽海的博客">
-<meta name="twitter:description" content="灯红酒绿的背后,是花与幽海">
+<meta name="twitter:title" content="关于对js的原型链的初步探讨 | 幽海的博客">
+<meta name="twitter:description" content="javascript 中原型链的探讨">
     
     
     
@@ -47,8 +47,8 @@
     </span>
 
     
- 
-<header class="panel-cover">
+
+<header class="panel-cover panel-cover--collapsed">
 
 
   <div class="panel-main">
@@ -147,100 +147,49 @@ classes that you can use:
         <div class="content-wrapper__inner entry">
             
 
+<article class="post-container post-container--single">
 
-   <!-- do nothing -->
-
-
-<div class="main-post-list">
-    <ol class="post-list">
+  <header class="post-header">
     
-    
-    <li>
+    <h1 class="post-title">关于对js的原型链的初步探讨</h1>
 
-      <h2 class="post-list__post-title post-title">
-        <a href="/2017/10/15/docker/" title="link to 关于docker的使用">关于docker的使用</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2017-10-15" class="post-list__meta--date date">2017-10-15</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2017/09/02/markdownFirst/" title="link to markdownFirst">markdownFirst</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2017-09-02" class="post-list__meta--date date">2017-09-02</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2017/08/29/mixin/" title="link to mixin">mixin</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2017-08-29" class="post-list__meta--date date">2017-08-29</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2017/08/28/page/" title="link to 关于对js的原型链的初步探讨">关于对js的原型链的初步探讨</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2017-08-28" class="post-list__meta--date date">2017-08-28</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-  </ol>
-
-  <hr class="post-list__divider " />
-
-<nav class="pagination" role="navigation">
     
 
-    <span class="pagination__page-number"> 1 / 1</span>
+    <div class="post-meta">
+      <time datetime="2017-08-28" class="post-meta__date date">2017-08-28</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/javascript/">javascript</a>
+            </font>
+          
+
+      </span>
+    </div>
     
     
-</nav>
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="javascript-中原型链的探讨"><a href="#javascript-中原型链的探讨" class="headerlink" title="javascript 中原型链的探讨"></a>javascript 中原型链的探讨</h1>
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
 
 
-</div>
+</article>
+
+
             <footer class="footer">
 
     <span class="footer__copyright">幽海 | github:<a href="https://github.com/yezidd">yzdd</a></span>
@@ -268,6 +217,18 @@ classes that you can use:
 
 
     
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
     
     
 

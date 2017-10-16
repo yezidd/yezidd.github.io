@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      mixin | 幽海的博客 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="幽海">
+    
+    
+
+    <meta name="description" content="mixin12虽然在ES6的语法中已经对mixin进行了废弃，但是本着追源的实质，我决定对mixin再进行一下研究，看看当时的语法思想  mixin允许我们定义在多个组件共用的方法1.什么是mixin123456789101112131415161718192021222324252627//常规写法var Timer = React.createClass(&amp;#123;    getInitia">
+<meta name="keywords" content="React javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mixin | 幽海的博客">
+<meta property="og:url" content="http://yoursite.com/2017/08/29/mixin/index.html">
+<meta property="og:site_name" content="幽海的博客">
+<meta property="og:description" content="mixin12虽然在ES6的语法中已经对mixin进行了废弃，但是本着追源的实质，我决定对mixin再进行一下研究，看看当时的语法思想  mixin允许我们定义在多个组件共用的方法1.什么是mixin123456789101112131415161718192021222324252627//常规写法var Timer = React.createClass(&amp;#123;    getInitia">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-29T03:35:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mixin | 幽海的博客">
+<meta name="twitter:description" content="mixin12虽然在ES6的语法中已经对mixin进行了废弃，但是本着追源的实质，我决定对mixin再进行一下研究，看看当时的语法思想  mixin允许我们定义在多个组件共用的方法1.什么是mixin123456789101112131415161718192021222324252627//常规写法var Timer = React.createClass(&amp;#123;    getInitia">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">幽海的博客</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">mixin</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-08-29" class="post-meta__date date">2017-08-29</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/React-javascript/">React javascript</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="mixin"><a href="#mixin" class="headerlink" title="mixin"></a>mixin</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">虽然在ES6的语法中已经对mixin进行了废弃，但是本着追源的实质，</div><div class="line">我决定对mixin再进行一下研究，看看当时的语法思想</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="mixin允许我们定义在多个组件共用的方法"><a href="#mixin允许我们定义在多个组件共用的方法" class="headerlink" title="mixin允许我们定义在多个组件共用的方法"></a>mixin允许我们定义在多个组件共用的方法</h2><h3 id="1-什么是mixin"><a href="#1-什么是mixin" class="headerlink" title="1.什么是mixin"></a>1.什么是mixin</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//常规写法</span></div><div class="line"><span class="keyword">var</span> Timer = React.createClass(&#123;</div><div class="line"></div><div class="line">    getInitialState:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> &#123;<span class="attr">secondElapsed</span>: <span class="number">0</span>&#125;</div><div class="line">    &#125;,</div><div class="line">    </div><div class="line">    tick:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">this</span>.setState(&#123;<span class="attr">secondElapsed</span>:<span class="keyword">this</span>.state.secondElapsed+<span class="number">1</span>&#125;)</div><div class="line">    &#125;,</div><div class="line">    </div><div class="line">    componentDidMount:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">this</span>.interval = setInterval(<span class="keyword">this</span>.tick,<span class="number">1000</span>);</div><div class="line">    &#125;,</div><div class="line">    </div><div class="line">    componentWillMount:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      clearInterval(<span class="keyword">this</span>.interval);</div><div class="line">    &#125;,</div><div class="line">    </div><div class="line">    render:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span>(</div><div class="line">        &lt;div&gt;</div><div class="line">            Seconds Elapsed : &#123;<span class="keyword">this</span>.state.secondElapsed&#125;</div><div class="line">        &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">      )</span></div><div class="line"><span class="regexp">    &#125;</span></div><div class="line"><span class="regexp">&#125;)</span></div></pre></td></tr></table></figure>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">幽海 | github:<a href="https://github.com/yezidd">yzdd</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

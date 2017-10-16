@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      关于docker的使用 | 幽海的博客 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="幽海">
+    
+    
+
+    <meta name="description" content="什么是docker1234Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。 docker的安装 这边我采用了daocloud国内的docker镜像安装 因为官方的docker pull镜像超级慢 安装方法:详情请见daocloud官网 截图:">
+<meta name="keywords" content="docker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于docker的使用 | 幽海的博客">
+<meta property="og:url" content="http://yoursite.com/2017/10/15/docker/index.html">
+<meta property="og:site_name" content="幽海的博客">
+<meta property="og:description" content="什么是docker1234Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。 docker的安装 这边我采用了daocloud国内的docker镜像安装 因为官方的docker pull镜像超级慢 安装方法:详情请见daocloud官网 截图:">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/image/docker_1.png">
+<meta property="og:image" content="http://yoursite.com/image/docker_2.png">
+<meta property="og:image" content="http://yoursite.com/image/docker_3.png">
+<meta property="og:image" content="http://yoursite.com/image/docker_5.png">
+<meta property="og:image" content="http://yoursite.com/image/docker_6.png">
+<meta property="og:updated_time" content="2017-10-16T06:27:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于docker的使用 | 幽海的博客">
+<meta name="twitter:description" content="什么是docker1234Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。 docker的安装 这边我采用了daocloud国内的docker镜像安装 因为官方的docker pull镜像超级慢 安装方法:详情请见daocloud官网 截图:">
+<meta name="twitter:image" content="http://yoursite.com/image/docker_1.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">幽海的博客</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">关于docker的使用</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-10-15" class="post-meta__date date">2017-10-15</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/docker/">docker</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h4 id="什么是docker"><a href="#什么是docker" class="headerlink" title="什么是docker"></a>什么是docker</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Docker 是一个开源的应用容器引擎，</div><div class="line">让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，</div><div class="line">然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。</div><div class="line">容器是完全使用沙箱机制，相互之间不会有任何接口。</div></pre></td></tr></table></figure>
+<h4 id="docker的安装"><a href="#docker的安装" class="headerlink" title="docker的安装"></a>docker的安装</h4><blockquote>
+<p>这边我采用了daocloud国内的docker镜像安装</p>
+<p>因为官方的docker pull镜像超级慢</p>
+<p>安装方法:<a href="https://download.daocloud.io/Docker_Mirror/Docker" target="_blank" rel="external">详情请见daocloud官网</a></p>
+<p>截图:</p>
+<p><img src="/image/docker_1.png" alt="docker安装成功截图"></p>
+</blockquote>
+<h4 id="docker的hello-world"><a href="#docker的hello-world" class="headerlink" title="docker的hello world"></a>docker的hello world</h4><blockquote>
+<p>首先要下载一个镜像文件</p>
+<p>这边我们运行 sudo pull centos:7 等待下载完成</p>
+<p>之后运行 docker run centos:7 /bin/echo “Hello world”</p>
+<p>docker是执行的二进制文件</p>
+<p>run是运行容器的命令</p>
+<p>centos:7是容器名字</p>
+<p>之后会返回一串二进制文件,这便是我们开启的容器的唯一辨识ID</p>
+<p><img src="/image/docker_2.png" alt="docker运行的截图"></p>
+</blockquote>
+<h4 id="docker的命令行"><a href="#docker的命令行" class="headerlink" title="docker的命令行"></a>docker的命令行</h4><blockquote>
+<p>docker logs -f 容器Id</p>
+<p><img src="/image/docker_3.png" alt="命令截图"></p>
+<p>docker logs查看容器里面的日志输出 -f就是以容器为环境输出 没有则是以服务器为环境</p>
+<p>docker ps</p>
+<p>输出当前所有运行中的容器</p>
+</blockquote>
+<h4 id="docker运行一个web服务器"><a href="#docker运行一个web服务器" class="headerlink" title="docker运行一个web服务器"></a>docker运行一个web服务器</h4><blockquote>
+<p>docker 查看监听的端口</p>
+<p><img src="/image/docker_5.png" alt="运行的截图"></p>
+<p>docker inspect会打印出当前容器所存在的所有的信息,以json的形式</p>
+<p><img src="/image/docker_6.png" alt="运行的截图"></p>
+</blockquote>
+<h4 id="docker创建容器的过程"><a href="#docker创建容器的过程" class="headerlink" title="docker创建容器的过程"></a>docker创建容器的过程</h4><h5 id="本地通过DockFile构建"><a href="#本地通过DockFile构建" class="headerlink" title="本地通过DockFile构建"></a>本地通过DockFile构建</h5><blockquote>
+<p>先创建目录nginx用于存档后面的相关东西</p>
+<p>mkdir -p ~/nginx/www ~/nginx/logs ~/nginx/conf</p>
+<p>www目录是将映射为nginx容器配置的虚拟目录</p>
+<p>logs目录将映射为nginx容器的日志目录</p>
+<p>conf目录里的配置文件将映射为nginx容器的配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">FROM debian:jessie</div><div class="line"></div><div class="line">MAINTAINER NGINX Docker Maintainers &quot;docker-maint@nginx.com&quot;</div><div class="line"></div><div class="line">ENV NGINX_VERSION 1.10.1-1~jessie</div><div class="line"></div><div class="line">RUN apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62 \</div><div class="line">        &amp;&amp; echo &quot;deb http://nginx.org/packages/debian/ jessie nginx&quot; &gt;&gt; /etc/apt/sources.list \</div><div class="line">        &amp;&amp; apt-get update \</div><div class="line">        &amp;&amp; apt-get install --no-install-recommends --no-install-suggests -y \</div><div class="line">                                                ca-certificates \</div><div class="line">                                                nginx=$&#123;NGINX_VERSION&#125; \</div><div class="line">                                                nginx-module-xslt \</div><div class="line">                                                nginx-module-geoip \</div><div class="line">                                                nginx-module-image-filter \</div><div class="line">                                                nginx-module-perl \</div><div class="line">                                                nginx-module-njs \</div><div class="line">                                                gettext-base \</div><div class="line">        &amp;&amp; rm -rf /var/lib/apt/lists/*</div><div class="line"></div><div class="line"># forward request and error logs to docker log collector</div><div class="line">RUN ln -sf /dev/stdout /var/log/nginx/access.log \</div><div class="line">        &amp;&amp; ln -sf /dev/stderr /var/log/nginx/error.log</div><div class="line"></div><div class="line">EXPOSE 80 443</div><div class="line"></div><div class="line">CMD [&quot;nginx&quot;, &quot;-g&quot;, &quot;daemon off;&quot;]</div></pre></td></tr></table></figure>
+<p>通过Dockerfile创建一个镜像，替换成你自己的名字</p>
+<p>docker build -t nginx</p>
+<p>~/nginx$ docker images nginx可以找到当前创建的docker文件</p>
+<p>后续继续更新</p>
+</blockquote>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">幽海 | github:<a href="https://github.com/yezidd">yzdd</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
